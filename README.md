@@ -15,16 +15,23 @@
 
 ## 安装
 
-1. 打开 Trae
-2. 克隆本仓库到本地项目目录
-3. Trae 自动读取 `.trae/rules/project-rules.md`
-4. 开始说中文，AI 按照提智规则回答
+**看图文教程（推荐）：** [ilang.cn/tpinstall.html](https://ilang.cn/tpinstall.html)
 
-```bash
+**文字版：**
+
+1. 打开 Trae（还没装？去 trae.cn 下载，免费）
+2. 按 Ctrl+J（Mac按Cmd+J）打开终端
+3. 复制下面这行，粘贴到终端里，按回车：
+
+```
 git clone https://gitee.com/palmmedia/iLang-Trae-Plugin.git
 ```
 
-或者直接下载 `.trae/rules/project-rules.md`，放到你项目的 `.trae/rules/` 目录下。
+4. 等几秒钟下载完，Trae 会自动读取插件
+5. 开始说中文，AI 会按照提智规则回答
+
+**如果报错 "git: command not found"：**
+在终端里先跑 `sudo apt install git -y`（Ubuntu）或去 git-scm.com 下载安装。
 
 ## 包含的技能（20个）
 
