@@ -115,7 +115,7 @@ rm -rf .trae
 
 不想看文字？这里有图文版，每一步都有截图：
 
-[ilang.cn/tpinstall.html](https://ilang.cn/tpinstall.html)
+<a href="https://ilang.cn/tpinstall.html" target="_blank">ilang.cn/tpinstall.html</a>
 
 ## 安全说明
 
@@ -172,9 +172,9 @@ rm -rf .ilang-tmp
 
 ## 相关项目
 
-- [I-Lang 协议](https://ilang.cn)
-- [Trae 下载](https://trae.cn)
-- [DeepSeek 终端客户端](https://gitee.com/palmmedia/DeepSeek-TUI-Enhanced)
+- <a href="https://ilang.cn" target="_blank">I-Lang 协议</a>
+- <a href="https://trae.cn" target="_blank">Trae 下载</a>
+- <a href="https://gitee.com/palmmedia/DeepSeek-TUI-Enhanced" target="_blank">DeepSeek-TUI-Enhanced</a>
 
 ## 协议
 
@@ -182,4 +182,4 @@ MIT · 免费 · 永久
 
 ## 关于
 
-[掌媒科技](https://zhangmei.com) · [I-Lang Research](https://ilang.cn) · Eastsoft Inc.
+<a href="https://zhangmei.com" target="_blank">掌媒科技</a> · <a href="https://ilang.cn" target="_blank">I-Lang Research</a> · Eastsoft Inc.
