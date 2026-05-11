@@ -4,12 +4,12 @@
 
 ## 这是什么
 
-一套 Trae 专用的 AI 行为定义和技能集。装上之后，Trae 的 AI 会变得更聪明：
+一套 AI 行为定义和技能集，兼容 Trae 和 Claude Code。装上之后 AI 会变得更聪明：
 
 - 回答结论先行，不废话，敢判断
 - 数据对比自动用表格
 - 教你的时候一步一步来，不会一次倒一堆
-- 建站、SEO、多语言、内容生成、联盟变现、部署上线，全链路覆盖
+- 建站、SEO、多语言、AdSense、联盟营销、部署上线，全链路覆盖
 - 基于 I-Lang v4.0 协议，内置四步法（观察、推理、输出、验证）
 
 不需要学 I-Lang 协议。装上就生效，AI 自动按照规则工作。效果因模型能力而异。
@@ -36,44 +36,50 @@ git clone https://gitee.com/palmmedia/iLang-Trae-Plugin.git
 git clone https://github.com/adsorgcn/iLang-Trae-Plugin.git
 ```
 
-4. 等几秒钟下载完，Trae 会自动读取插件
+4. 等几秒钟下载完，Trae 会自动读取规则和技能
 5. 开始说中文，AI 会按照提智规则回答
 
-**如果报错 "git: command not found"：**
-在终端里先跑 `sudo apt install git -y`（Ubuntu）或去 git-scm.com 下载安装。
+**Claude Code 用户：**
+
+```
+git clone https://github.com/adsorgcn/iLang-Trae-Plugin.git
+cd iLang-Trae-Plugin
+claude
+```
+
+Claude Code 会自动读取 CLAUDE.md 并加载所有技能。
 
 ## 卸载 / 恢复默认
 
-删掉 `.trae` 文件夹即可恢复 Trae 默认行为：
+删掉 `.trae` 文件夹即可恢复默认行为：
 
 ```
 rm -rf .trae
 ```
 
-## 包含的技能（20个）
+## 结构
 
-| 技能 | 说明 |
-|------|------|
-| 行为定义 | 结论先行、不废话、敢判断、表格对比 |
-| 教学模式 | 一步一步教、截图优先、耐心无限 |
-| 提智去障 | 识别心理障碍、重构认知、培养提问能力 |
-| 四步法 | 观察、推理、输出、验证，把AI从"看表面"升级到"看本质" |
-| 建站 | 从零搭站，HTML/CSS/JS，移动端优先 |
-| SEO基础 | meta标签、JSON-LD结构化数据、sitemap |
-| SEO实战 | FAQPage抢snippet、标题功能词前置、pSEO、llms.txt |
-| 多语言 | 一键生成7种语言版本，hreflang配置，URL翻7倍 |
-| AI内容生成 | 按模板批量生成文章，自动分段分表 |
-| 去AI指纹 | 检测并替换26个AI指纹词，句式打散 |
-| 联盟变现 | CJ/Impact/Awin/Amazon Associates接入，AdSense配置 |
-| 信息搜集 | Reddit找niche、竞品分析、行业资源库 |
-| 一键部署 | 腾讯云轻量，一行命令上线 |
-| OpenClaw对接 | 一键部署AI员工，飞书管理 |
-| 技术选型 | 自动选最省钱最简单的方案 |
-| 质量检查 | 每个功能做完自动检查 |
-| 智能压缩 | 内部思考用I-Lang压缩，省60%token |
-| 进度汇报 | 每次结束给进度总结 |
-| 意图识别 | 自动判断你想干什么，不用你说明白 |
-| ads.txt配置 | pub-前缀铁律，全站统一 |
+```
+.trae/
+  rules/
+    project-rules.md          ← 核心行为（结论先行/不废话/四步法）
+  skills/
+    deepseek/SKILL.md         ← DeepSeek配置、模型选择、省钱
+    think/SKILL.md            ← 四步法思维升级
+    build/SKILL.md            ← 从零建站
+    seo/SKILL.md              ← SEO全链路
+    multilang/SKILL.md        ← 7种语言扩展
+    content/SKILL.md          ← AI内容生成
+    deai/SKILL.md             ← 去AI指纹
+    affiliate/SKILL.md        ← 联盟营销变现
+    adsense/SKILL.md          ← Google AdSense运营
+    research/SKILL.md         ← 信息搜集、竞品分析
+    deploy/SKILL.md           ← 一键部署
+    openclaw/SKILL.md         ← AI员工对接
+    techstack/SKILL.md        ← 技术选型
+    teaching/SKILL.md         ← 教学模式
+CLAUDE.md                     ← Claude Code 入口
+```
 
 ## 适合谁
 
@@ -85,11 +91,11 @@ rm -rf .trae
 ## 不适合谁
 
 - 专业程序员（用 AutoCode 更合适：github.com/ilang-ai/autocode）
-- 英文环境用户（用 ZeroCode/AutoCode）
+- 英文环境用户（用 AutoCode）
 
 ## 安全说明
 
-- 本插件不包含可执行代码，仅为 Trae AI 行为定义文件
+- 本插件不包含可执行代码，仅为 AI 行为定义文件
 - 安装方式为标准 Git 克隆，无需下载二进制或执行脚本
 - 所有外部链接仅作文档引用，不影响插件功能
 
