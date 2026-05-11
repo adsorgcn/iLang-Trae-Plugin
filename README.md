@@ -90,6 +90,7 @@ rm -rf .trae
   rules/
     project-rules.md          ← 核心行为（结论先行/不废话/四步法/执行边界）
   skills/
+    niche-select/SKILL.md     ← 赛道选择、标杆站分析、数据验证
     deepseek/SKILL.md         ← DeepSeek配置、模型选择、省钱
     think/SKILL.md            ← 四步法思维升级
     build/SKILL.md            ← 从零建站

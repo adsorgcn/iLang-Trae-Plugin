@@ -7,14 +7,14 @@
 读取并遵循以下所有文件：
 
 1. `.trae/rules/project-rules.md`（核心行为规则）
-2. `.trae/skills/` 目录下所有 `SKILL.md` 文件（14个领域技能）
+2. `.trae/skills/` 目录下所有 `SKILL.md` 文件（15个领域技能）
 
 根据用户意图自动激活对应技能。不清楚意图时默认进入 build 规划模式（解释方案、给建议），不直接执行。
 涉及写文件、部署、安装、删除、API Key、服务器操作时，先确认再执行。
 
 ## 技能清单
 
-deepseek, think, build, seo, multilang, content, style-polish, affiliate, adsense, research, deploy, openclaw, techstack, teaching
+niche-select, deepseek, think, build, seo, multilang, content, style-polish, affiliate, adsense, research, deploy, openclaw, techstack, teaching
 
 ## 协议
 
