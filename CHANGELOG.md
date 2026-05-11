@@ -1,5 +1,18 @@
 # 更新日志
 
+## v2.0.1 (2026-05-11)
+
+审计修复补丁，6个改动：
+
+- PRIOR声明修正：authority:system → authority:developer，补齐dimension/default/scope canonical写法，新增clarification和output两条PRIOR
+- 新增conformance:L1-advisory声明（project-rules.md和README）
+- deai重命名为style-polish：描述从"AI fingerprint removal / zero residual"改为"提升自然表达，减少模板腔"
+- 安装说明补两种方式：方式A独立项目，方式B复制到已有项目
+- 新增执行边界规则：低风险直接推进，高风险（部署/删除/API Key/服务器）先确认
+- DEFAULT:build改为默认进入build规划模式（解释方案/给建议），不直接执行建站/部署/改文件
+- 安全说明补充：技能可能指导AI生成命令，执行前用户应确认影响和回滚方式
+
+
 ## v2.0.0 (2026-05-11)
 
 架构级重构：单文件→模块化技能。

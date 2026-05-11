@@ -14,17 +14,30 @@
 
 不需要学 I-Lang 协议。装上就生效，AI 自动按照规则工作。效果因模型能力而异。
 
+## I-Lang v4.0 兼容等级
+
+本仓库是 I-Lang v4.0 L1 advisory skill pack。
+
+它提供规则和技能文本，帮助 AI 按 v4 风格工作：
+- PRIOR 默认倾向（完成前自检、安全时推进、不确定时澄清）
+- 四步法：观察、推理、输出、验证
+- 证据优先，不用努力程度冒充完成
+
+它不提供：
+- L2 runtime enforcement（运行时强隔离）
+- L3 external grader（外部评分器）
+
 ## 安装
 
 **看图文教程（推荐）：** [ilang.cn/tpinstall.html](https://ilang.cn/tpinstall.html)
 
-**文字版：**
+### 方式 A：作为独立项目使用（推荐新手）
 
 1. 打开 Trae（还没装？去 trae.cn 下载，免费）
 2. 按 Ctrl+J（Mac按Cmd+J）打开终端
-3. 复制下面这行，粘贴到终端里，按回车：
+3. 复制粘贴以下命令，按回车：
 
-**国内用户（推荐）：**
+**国内用户：**
 
 ```
 git clone https://gitee.com/palmmedia/iLang-Trae-Plugin.git
@@ -36,10 +49,20 @@ git clone https://gitee.com/palmmedia/iLang-Trae-Plugin.git
 git clone https://github.com/adsorgcn/iLang-Trae-Plugin.git
 ```
 
-4. 等几秒钟下载完，Trae 会自动读取规则和技能
+4. 在 Trae 中打开克隆下来的 `iLang-Trae-Plugin` 文件夹
 5. 开始说中文，AI 会按照提智规则回答
 
-**Claude Code 用户：**
+### 方式 B：安装到已有项目
+
+```
+git clone --depth 1 https://gitee.com/palmmedia/iLang-Trae-Plugin.git .ilang-tmp
+cp -R .ilang-tmp/.trae ./
+rm -rf .ilang-tmp
+```
+
+海外用户把 gitee.com/palmmedia 换成 github.com/adsorgcn。
+
+### Claude Code 用户
 
 ```
 git clone https://github.com/adsorgcn/iLang-Trae-Plugin.git
@@ -48,6 +71,9 @@ claude
 ```
 
 Claude Code 会自动读取 CLAUDE.md 并加载所有技能。
+
+**如果报错 "git: command not found"：**
+在终端里先跑 `sudo apt install git -y`（Ubuntu）或去 git-scm.com 下载安装。
 
 ## 卸载 / 恢复默认
 
@@ -62,7 +88,7 @@ rm -rf .trae
 ```
 .trae/
   rules/
-    project-rules.md          ← 核心行为（结论先行/不废话/四步法）
+    project-rules.md          ← 核心行为（结论先行/不废话/四步法/执行边界）
   skills/
     deepseek/SKILL.md         ← DeepSeek配置、模型选择、省钱
     think/SKILL.md            ← 四步法思维升级
@@ -70,7 +96,7 @@ rm -rf .trae
     seo/SKILL.md              ← SEO全链路
     multilang/SKILL.md        ← 7种语言扩展
     content/SKILL.md          ← AI内容生成
-    deai/SKILL.md             ← 去AI指纹
+    style-polish/SKILL.md     ← 提升自然表达，减少模板腔
     affiliate/SKILL.md        ← 联盟营销变现
     adsense/SKILL.md          ← Google AdSense运营
     research/SKILL.md         ← 信息搜集、竞品分析
@@ -95,9 +121,14 @@ CLAUDE.md                     ← Claude Code 入口
 
 ## 安全说明
 
-- 本插件不包含可执行代码，仅为 AI 行为定义文件
-- 安装方式为标准 Git 克隆，无需下载二进制或执行脚本
-- 所有外部链接仅作文档引用，不影响插件功能
+本仓库本身不包含可执行代码，仅包含 AI 行为规则和技能文本。
+但技能可能指导 AI 生成 shell 命令、安装命令、部署命令或配置命令。
+
+执行任何命令前，请确认：
+1. 命令要改什么
+2. 是否涉及服务器、DNS、账号、支付、API Key
+3. 是否可回滚
+4. 是否真的需要现在执行
 
 ## 更新日志
 
