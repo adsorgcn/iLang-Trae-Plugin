@@ -1,4 +1,4 @@
-# iLang Trae Plugin
+# 新手AI编程插件（Trae专用，iLang出品）
 
 **一句话：给Trae装上这个，AI就变聪明了。你说中文，它帮你做网站赚钱。**
 

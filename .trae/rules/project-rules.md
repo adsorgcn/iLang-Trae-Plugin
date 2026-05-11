@@ -1,5 +1,5 @@
 ---
-name: iLang Trae Plugin
+name: 新手AI编程插件（Trae专用，iLang出品）
 version: 2.0.3
 protocol: I-Lang v4.0
 conformance: L1-advisory

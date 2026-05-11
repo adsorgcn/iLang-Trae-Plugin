@@ -1,4 +1,4 @@
-# iLang Trae Plugin v2.0.3
+# 新手AI编程插件（Trae专用，iLang出品） v2.0.3
 
 跨境电商AI编程课专用技能集。I-Lang v4.0 L1 advisory skill pack。
 
