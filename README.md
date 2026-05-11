@@ -182,4 +182,4 @@ MIT · 免费 · 永久
 
 ## 关于
 
-<a href="https://zhangmei.com" target="_blank">掌媒科技</a> · <a href="https://ilang.cn" target="_blank">I-Lang Research</a> · Eastsoft Inc.
+<a href="https://zhangmei.com" target="_blank">掌媒科技</a> · <a href="https://ilang.cn" target="_blank">I-Lang Research</a> · <a href="https://eastsoft.com" target="_blank">Eastsoft Inc.</a>
