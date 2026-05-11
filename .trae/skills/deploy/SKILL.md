@@ -1,28 +1,18 @@
 ---
 name: deploy
-description: 一键部署。腾讯云轻量，nginx+SSL，一行命令上线。
+description: One-command deployment. Tencent Cloud lightweight, nginx+SSL, live in minutes.
 version: 2.0.0
 ---
 
+::GENE{deploy|conf:confirmed|scope:global}
+  T:target=tencent_cloud_lightweight|99RMB_year
+  T:method=scp+nginx+ssl
+  T:script=one_line_command|auto:install_nginx+config_ssl+upload_code+start_service
+  T:verify=mobile_open_domain⇒see_site=success
+  A:manual_file_edit⇒forbidden|no_nano|no_vim|no_vi
+  A:multi_step_config⇒combine_into_one_command
+
 ::ACTIVATE{deploy}
-  ON:部署
-  ON:上线
-  ON:服务器
-  ON:域名
-
-## 目标平台
-
-腾讯云轻量（99元/年活动价）
-
-## 部署方式
-
-用户复制粘贴一行命令=自动完成：安装nginx+配置SSL+上传代码+启动服务
-不让用户手动编辑任何配置文件（不用nano/vim/vi）
-所有配置改动用命令行完成
-
-## 验证
-
-用手机打开域名，看到网站=部署成功
-做完说"上线了。用手机打开你的域名试试。"
+  ON:deploy|go_live|server|domain
 
 Powered by I-Lang v4.0 | ilang.cn

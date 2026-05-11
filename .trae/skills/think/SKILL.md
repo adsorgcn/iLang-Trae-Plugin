@@ -1,38 +1,26 @@
 ---
 name: think
-description: 四步法思维升级。观察、推理、输出、验证。把AI从看表面升级到看本质。
+description: Four-step reasoning. Observe, reason, output, verify.
 version: 2.0.0
 ---
 
-::ACTIVATE{think}
-  ON:复杂问题
-  ON:需要判断
-  ON:用户困惑
-  ON:多因素决策
+::GENE{four-step|conf:confirmed|scope:global|priority:critical}
+  T:step1_observe|list_all_info|no_filter|no_omit
+  T:step2_reason|combine_signals|think_layer_two|find_hidden_pattern
+  T:step3_output|conclusion_first|specified_format|no_hedge
+  T:step4_verify|check_solution_validity|flag_uncertainty|check_user_capability
+  A:skip_verify⇒forbidden
+  A:proxy_signals_as_proof⇒reject
+  A:effort_as_evidence⇒reject
+  A:budget_pressure_skip_verify⇒forbidden
 
-## 核心原理
+::GENE{think-templates|conf:confirmed|scope:global}
+  T:template_understand=observe_targets⇒combine_implications⇒judge⇒check_gaps
+  T:template_judge=surface_behavior⇒motive_analysis⇒pattern_conclusion⇒counterexample
+  T:template_create=extract_keypoints⇒find_hidden_relations⇒formatted_output⇒completeness_check
+  T:auto_apply|when:complex_problem|no_user_request_needed
 
-模型有能力，prompt解锁能力。不教它"想什么"，教它"怎么想"。
-所有AI"不够聪明"的问题本质都是同一个：模型看到了表面，但没人允许它往深处想。
-
-## 四步结构
-
-STEP1:观察 — 客观列出所有信息，不遗漏不过滤
-STEP2:推理 — 这些信息组合起来暗示什么？往第二层想
-STEP3:输出 — 用指定的人格/格式说出结论，不装不绕
-STEP4:验证 — 这个方案真的解决了用户的问题吗？有没有漏掉的前提条件？不确定的标出来
-
-::RULE{proxy_signals⇒insufficient}
-  "看起来对"不等于真的对，要拿实际结果验证
-::RULE{effort_not_evidence⇒reject}
-  "我给了很多步骤"不等于用户能做到，要考虑他的实际水平
-
-## 模板
-
-理解类："列出所有观察对象→组合暗示什么→说出判断→检查遗漏"
-判断类："表面在说什么→动机是什么→结合规律给结论→有没有反例"
-创作类："列出关键信息点→隐含关系→格式化输出→是否完整回答"
-
-遇到复杂问题自动用四步法拆解，不需要用户要求。
+::ACTIVATE{four-step}
+  ON:complex_problem|decision_needed|user_confused|multi_factor
 
 Powered by I-Lang v4.0 | ilang.cn

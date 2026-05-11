@@ -1,108 +1,84 @@
 ---
 name: adsense
-description: Google AdSense完整运营。申请、广告位、RPM优化、封号防护、多站运营、收益诊断。基于400+实战案例提炼。
+description: Google AdSense full operations. Application, ad placement, RPM optimization, ban protection, multi-site, revenue diagnostics.
 version: 2.0.0
 ---
 
+::GENE{adsense-apply|conf:confirmed|scope:global}
+  T:content_min=20_original_articles|1500words_each|real_value
+  T:structure=clear_nav+about+contact+privacy_policy
+  T:tech=https_required|mobile_responsive|load_under_3s
+  T:wait=1_to_4_weeks|rejected⇒fix_and_reapply|unlimited_attempts
+
+::GENE{adsense-adstxt|conf:confirmed|scope:global|priority:critical}
+  T:prefix=pub-|never:ca-
+  T:scope=every_site|no_exception
+  A:ca_prefix⇒strip_immediately
+
+::GENE{adsense-placement|conf:confirmed|scope:global}
+  T:position_1=after_first_paragraph|ctr:highest|required
+  T:position_2=mid_article|ctr:medium|for_long_articles_1to2
+  T:position_3=sidebar|ctr:low|desktop_only|hide_mobile
+  T:position_4=end_of_article|ctr:medium_low|one
+  T:max_per_page=3to4|more⇒hurts_ux_and_rpm
+  A:over_4_ads_per_page⇒reduce
+
+::GENE{adsense-rpm|conf:confirmed|scope:global}
+  T:lang_factor|en:12usd|ja:8to10|zh:3to5
+  T:device_factor|desktop:3x_mobile
+  T:https_migration⇒rpm+20to30pct
+  T:speed_6s_to_2s⇒rpm+75pct
+  T:high_value_niche=finance|insurance|legal|rpm:15to30
+  T:low_value_niche=entertainment|news|rpm:1to3
+
+::GENE{adsense-content-strategy|conf:confirmed|scope:global}
+  T:golden_ratio=70pct_longtail+30pct_trending
+  T:longtail_length=3000words+|avg_earning_article=3200words
+  T:article_ending=comparison_table|no_summary
+  A:summary_paragraph⇒cut
+
+::GENE{adsense-cpc-cpm|conf:confirmed|scope:global}
+  T:cpc|fits:high_intent(review|comparison|tutorial)|user_clicks
+  T:cpm|fits:high_traffic_low_intent(news|entertainment)|impression_based
+  T:default=cpc|switch_cpm|when:daily_pv>50k_and_ctr<1pct
+
+::GENE{adsense-multisite|conf:confirmed|scope:global}
+  T:phase_1=1to3_sites|focus:first_site_to_500usd_month
+  T:phase_2=5to10_sites|diversify_niche_spread_risk
+  T:phase_3=10to50_sites|ai_batch_content+management_system
+  T:phase_4=50plus|team_or_full_automation|target:50k_usd_month
+  T:one_account_multi_site|no_multi_account_needed
+
+::GENE{adsense-ban-protection|conf:confirmed|scope:global|priority:critical}
+  T:rule_1=no_bought_traffic|no_click_exchange|no_mutual_clicking
+  T:rule_2=no_click_bait_copy|no:"click_here_to_support_me"
+  T:rule_3=sufficient_spacing_between_ad_and_content|no_misclick
+  T:rule_4=no_ads_in_popups
+  T:rule_5=suspicious_ip_burst⇒block_immediately
+  A:any_invalid_click_pattern⇒investigate_and_block
+
+::GENE{adsense-diagnostics|conf:confirmed|scope:global}
+  T:rpm_drop⇒check_algo_update+search_console_ranking
+  T:ctr_drop⇒check_ad_placement+mobile_display
+  T:seasonal=Q4_highest(advertiser_budget)|Q1_lowest
+  T:traffic_crash⇒diagnose_algo_vs_technical|tech:fix_48h|algo:content_quality_push
+
+::GENE{adsense-multilang|conf:confirmed|scope:global}
+  T:en_rpm_highest|ja_second|zh_lowest
+  T:7lang_same_site⇒revenue_3to5x
+  T:adstxt=one_per_domain|not_per_language
+
+::GENE{adsense-ab-test|conf:confirmed|scope:global}
+  T:tool=adsense_builtin_experiments
+  T:test_vars=ad_size|ad_type(display|text|native)|ad_count
+  T:rule=one_variable_at_a_time|run_2_weeks
+
+::GENE{adsense-tool-site|conf:confirmed|scope:global}
+  T:user_dwell_time=short|ad_near_result
+  T:typical_rpm=5to8usd|pdf|image|converter_tools
+  T:priority=stable_function>rich_content
+
 ::ACTIVATE{adsense}
-  ON:adsense
-  ON:广告收入
-  ON:RPM
-  ON:CTR
-  ON:广告位
-  ON:封号
-  ON:申请adsense
-
-## 申请通过铁律
-
-内容：至少20篇原创文章，每篇1500字以上，有实际价值
-结构：清晰的导航、关于页面、联系页面、隐私政策
-技术：HTTPS必须、移动端适配、加载速度3秒以内
-等待：提交后1-4周，被拒了改完再申请，不限次数
-
-## ads.txt配置
-
-用pub-前缀，不加ca-前缀。全站铁律，每个站都要配。
-
-## 广告位优化
-
-| 位置 | CTR | 建议 |
-|------|-----|------|
-| 文章开头第一段后 | 最高 | 必放 |
-| 文章中间 | 中 | 长文章放1-2个 |
-| 侧边栏 | 低 | 桌面端放，移动端隐藏 |
-| 文章结尾 | 中低 | 放一个 |
-
-不要一个页面超过3-4个广告，影响体验反而降RPM。
-
-## RPM提升策略（实战数据）
-
-| 策略 | RPM变化 | 验证数据 |
-|------|---------|---------|
-| 英文站 vs 中文站 | 英文12刀 vs 中文3-5刀 | 多站长期数据 |
-| 桌面端 vs 移动端 | 桌面高300% | 多站对比 |
-| HTTPS迁移 | +20-30% | 大规模验证 |
-| 页面速度从6s到2s | +75% | 实测数据 |
-| 高价值niche（金融/保险/法律） | RPM 15-30刀 | 多站数据 |
-| 低价值niche（娱乐/新闻） | RPM 1-3刀 | 多站数据 |
-
-## 7/3内容黄金法则
-
-70%长尾关键词内容（稳定流量）+ 30%热点内容（爆发流量）
-长尾文章3000字以上，数据实测月入2000刀的文章平均3200字
-文章不写"总结"段落，对比表就是结尾
-
-## CPC vs CPM选择
-
-| 类型 | 适合 | 说明 |
-|------|------|------|
-| CPC（按点击） | 高意图内容（评测、对比、教程） | 用户有购买意图，点击率高 |
-| CPM（按展示） | 高流量低意图（新闻、娱乐） | 流量大但用户不点广告 |
-
-大部分站用CPC。日PV超过5万且CTR低于1%时考虑CPM。
-
-## 多站运营策略
-
-| 阶段 | 站点数 | 重点 |
-|------|--------|------|
-| 新手 | 1-3个 | 先把一个站做到月入500刀 |
-| 进阶 | 5-10个 | 不同niche分散风险 |
-| 规模化 | 10-50个 | AI批量生成内容+站群管理系统 |
-| 高级 | 50+ | 团队/AI自动化，月入5万刀+ |
-
-同一个AdSense账号可以绑多个站，不需要多账号。
-
-## 封号防护
-
-第一：不买流量，不刷点击，不互点
-第二：不放诱导点击的文案（"点击这里支持我"）
-第三：广告和内容之间留足间距，不要让用户误点
-第四：不在弹窗里放广告
-第五：一个IP短时间大量点击=立刻屏蔽该IP（用AdSense的竞争对手无效点击保护）
-
-## 收益诊断
-
-RPM突然下降：检查是否被Google算法更新打击，看Search Console有没有排名下降
-CTR突然下降：检查广告位有没有被页面改动遮挡，移动端是否正常显示
-收入季节性波动：Q4（10-12月）RPM最高（广告主年底冲预算），Q1最低
-流量暴跌后恢复：先确认是算法还是技术问题，技术问题48小时内修，算法问题做内容质量提升
-
-## 多语言AdSense
-
-英文站RPM最高（12刀+），日文站其次（8-10刀），中文站最低（3-5刀）
-同一个站做7种语言，AdSense收入可以翻3-5倍
-每种语言独立ads.txt不需要，一个就够
-
-## A/B测试
-
-Google AdSense自带实验功能：设置 → 实验
-测试内容：广告大小、广告类型（展示/文字/原生）、广告数量
-每次只测一个变量，跑2周看数据
-
-## 工具站AdSense特殊策略
-
-工具站用户停留时间短（用完就走），广告要放在工具结果旁边
-PDF工具/图片工具/转换工具的RPM通常在5-8刀
-工具站核心：功能稳定 > 内容丰富，用户来是用工具不是读文章
+  ON:adsense|ad_revenue|rpm|ctr|ad_placement|banned|apply_adsense
 
 Powered by I-Lang v4.0 | ilang.cn

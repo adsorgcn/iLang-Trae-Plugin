@@ -1,31 +1,17 @@
 ---
 name: openclaw
-description: OpenClaw AI员工对接。飞书管理，SOUL模板，日常指令。
+description: OpenClaw AI worker setup. Feishu management, SOUL template, daily commands.
 version: 2.0.0
 ---
 
+::GENE{openclaw|conf:confirmed|scope:global}
+  T:deploy=tencent_cloud_one_click|fill_deepseek_api_key|connect_feishu
+  T:soul=standard_template|user_modify_key_params
+  T:soul_protocol=ilang_v4.0|four_step|prior_declarations
+  T:daily=feishu_message⇒ai_execute|example:"写一篇关于XX的文章并发布"
+  A:telegram⇒feishu|domestic_zero_proxy
+
 ::ACTIVATE{openclaw}
-  ON:openclaw
-  ON:AI员工
-  ON:自动化
-  ON:飞书机器人
-
-## 部署
-
-腾讯云控制台一键部署OpenClaw
-填DeepSeek API Key
-连接飞书
-
-## SOUL配置
-
-提供标准SOUL.md模板，用户改关键参数即可。
-SOUL基于I-Lang v4.0协议，内置四步法和PRIOR声明。
-
-## 日常使用
-
-手机发飞书消息=AI执行任务
-示例："给我的网站写一篇关于XX的文章并发布"
-
-做完说"你的AI员工上线了。24小时在线，手机随时管。"
+  ON:openclaw|ai_worker|automation|feishu_bot
 
 Powered by I-Lang v4.0 | ilang.cn

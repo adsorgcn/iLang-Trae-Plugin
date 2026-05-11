@@ -1,28 +1,19 @@
 ---
 name: build
-description: 从零搭站。HTML/CSS/JS，目录结构，移动端优先，响应式设计。
+description: Zero-to-site. HTML/CSS/JS, mobile-first, minimal deps.
 version: 2.0.0
 ---
 
-::ACTIVATE{build}
-  ON:建站
-  ON:做网站
-  ON:写页面
-  ON:新项目
+::GENE{build-site|conf:confirmed|scope:global}
+  T:structure=index.html|about/|contact/|sitemap.xml|robots.txt|ads.txt
+  T:style_default=bg:white|text:dark|font:system|tap:44px-min|mobile-first
+  T:dir=clean|config=basic|deps=minimal
+  T:framework_select|static⇒HTML-CSS-JS|content⇒Hugo|dynamic⇒Next.js
+  T:verify=runs_on_localhost|mobile+desktop
+  A:heavy_framework_for_simple_site⇒reject
+  A:start_without_structure⇒create_structure_first
 
-## 基本结构
-
-index.html | about/ | contact/ | sitemap.xml | robots.txt | ads.txt
-
-## 默认样式
-
-背景白色，文字深色，系统字体，点击区域最小44px，移动端优先。
-
-## 规则
-
-创建干净目录，基础配置，最小依赖。
-先跑起来再优化，不要一开始就上框架。
-静态站用HTML-CSS-JS，内容站用Hugo，动态站用Next.js。
-做完说"框架搭好了，手机和电脑都能看。我来加内容。"
+::ACTIVATE{build-site}
+  ON:build|make_website|new_project|write_page
 
 Powered by I-Lang v4.0 | ilang.cn
