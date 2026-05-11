@@ -1,66 +1,139 @@
 # iLang 提智插件
 
-跨境电商 AI 编程课专用技能集，安装即生效，说中文出产品。
+**一句话：装上这个，AI就变聪明了。你说中文，它帮你做网站赚钱。**
 
-## 这是什么
+## 这东西干什么用的
 
-一套 AI 行为定义和技能集，兼容 Trae 和 Claude Code。装上之后 AI 会变得更聪明：
+你知道ChatGPT、DeepSeek这些AI吗？它们很聪明，但有时候回答废话多、不敢给建议、说了半天没结论。
 
-- 回答结论先行，不废话，敢判断
-- 数据对比自动用表格
-- 教你的时候一步一步来，不会一次倒一堆
-- 建站、SEO、多语言、AdSense、联盟营销、部署上线，全链路覆盖
-- 基于 I-Lang v4.0 协议，内置四步法（观察、推理、输出、验证）
+这个插件就是给AI装一套"工作规范"。装上之后AI会：
 
-不需要学 I-Lang 协议。装上就生效，AI 自动按照规则工作。效果因模型能力而异。
+- 你问它哪个好，它直接告诉你哪个好，不说"取决于你的需求"
+- 数据对比自动画表格，一目了然
+- 教你东西的时候一步一步来，不会一次倒一堆把你搞晕
+- 你说"帮我做个网站"，它真的从零开始帮你做出来
+- 你不知道做什么方向，它帮你看赚钱的赛道，搜出标杆网站给你参考
 
-## I-Lang v4.0 兼容等级
+你不需要懂任何技术。装上就生效。
 
-本仓库是 I-Lang v4.0 L1 advisory skill pack。
+## 我需要准备什么
 
-它提供规则和技能文本，帮助 AI 按 v4 风格工作：
-- PRIOR 默认倾向（完成前自检、安全时推进、不确定时澄清）
-- 四步法：观察、推理、输出、验证
-- 证据优先，不用努力程度冒充完成
+一台电脑（Windows 或 Mac），能上网就行。
 
-它不提供：
-- L2 runtime enforcement（运行时强隔离）
-- L3 external grader（外部评分器）
+## 第一步：装 Trae
 
-## 安装
+Trae 是一个免费的AI编程工具，字节跳动（抖音的公司）做的。你不需要懂编程，你说中文，它替你写代码。
 
-**看图文教程（推荐）：** [ilang.cn/tpinstall.html](https://ilang.cn/tpinstall.html)
+**Windows用户：**
 
-### 方式 A：作为独立项目使用（推荐新手）
+1. 打开浏览器（Edge、Chrome都行）
+2. 在地址栏输入 **trae.cn** 按回车
+3. 点页面上的"下载"按钮
+4. 下载完双击安装，一路点"下一步"就行
+5. 如果弹出"Windows已保护你的电脑"蓝色弹窗，点左边小字"更多信息"，再点"仍要运行"。这不是病毒，是因为软件比较新
 
-1. 打开 Trae（还没装？去 trae.cn 下载，免费）
-2. 按 Ctrl+J（Mac按Cmd+J）打开终端
-3. 复制粘贴以下命令，按回车：
+**Mac用户：**
 
-**国内用户：**
+1. 打开浏览器，输入 **trae.cn**
+2. 点"下载"
+3. 下载完打开，把Trae图标拖到"应用程序"文件夹
+4. 第一次打开如果提示"无法打开"：点左上角苹果图标 → 系统设置 → 隐私与安全性 → 点"仍要打开"
+
+打开Trae，看到欢迎界面 = 成功了。
+
+## 第二步：装提智插件
+
+1. 打开 Trae
+2. 按键盘上的 **Ctrl+J**（Mac按 **Cmd+J**），屏幕下方会弹出一个黑色的框，这叫"终端"，你可以理解为"给电脑打字下命令的地方"
+3. 把下面这行字完整复制（鼠标选中 → 右键 → 复制，或者 Ctrl+C）：
 
 ```
 git clone https://gitee.com/palmmedia/iLang-Trae-Plugin.git
 ```
 
-**海外用户：**
+4. 在黑色框里右键 → 粘贴（或者 Ctrl+V），然后按回车
+5. 等几秒钟，会看到一些文字滚动，最后停下来 = 下载完了
+6. 在 Trae 里点左上角"文件" → "打开文件夹"，找到刚才下载的 **iLang-Trae-Plugin** 文件夹，点"选择"打开它
+
+**如果第4步报错"git: command not found"：**
+
+说明你电脑没装 git（一个下载工具）。在黑色框里输入下面这行按回车：
+
+Windows: 去 **git-scm.com** 下载安装，装完关掉Trae重新打开再试
+Mac: 会自动弹出安装提示，点"安装"就行
+
+**海外用户用这行：**
 
 ```
 git clone https://github.com/adsorgcn/iLang-Trae-Plugin.git
 ```
 
-4. 在 Trae 中打开克隆下来的 `iLang-Trae-Plugin` 文件夹
-5. 开始说中文，AI 会按照提智规则回答
+## 第三步：开始用
 
-### 方式 B：安装到已有项目
+打开文件夹后，在 Trae 的对话框里直接说中文就行：
+
+- "帮我做一个卖咖啡的网站"
+- "我不知道做什么方向，帮我看看什么赚钱"
+- "这个网站怎么让Google搜到"
+- "帮我接广告赚钱"
+
+AI 会按照提智规则回答你，比普通AI聪明很多。
+
+## 装了之后AI多了什么能力
+
+| 能力 | 说明 |
+|------|------|
+| 帮你选赚钱方向 | 不知道做什么？它列出几十个赚钱赛道给你选，搜出标杆网站给你看真实数据 |
+| 帮你做网站 | 你说想做什么站，它从零搭出来，手机电脑都能看 |
+| 帮你做SEO | 让Google能搜到你的网站，自动配置好各种搜索引擎需要的东西 |
+| 帮你做7种语言 | 一个中文网站自动变成8种语言，搜索量翻8倍 |
+| 帮你接广告赚钱 | Google AdSense广告怎么申请、怎么放、怎么提高收入 |
+| 帮你推产品赚佣金 | 联盟营销怎么选品、怎么放链接、怎么赚佣金 |
+| 帮你上线 | 网站做好后一行命令发布到网上，全世界都能访问 |
+| 帮你配AI员工 | 做一个24小时在线的AI助手，手机随时管 |
+
+## 不想用了怎么办
+
+在 Trae 的终端（Ctrl+J打开）里输入：
 
 ```
-git clone --depth 1 https://gitee.com/palmmedia/iLang-Trae-Plugin.git .ilang-tmp
-cp -R .ilang-tmp/.trae ./
-rm -rf .ilang-tmp
+rm -rf .trae
 ```
 
-海外用户把 gitee.com/palmmedia 换成 github.com/adsorgcn。
+按回车，插件就删掉了，AI恢复默认。
+
+## 看图文教程
+
+不想看文字？这里有图文版，每一步都有截图：
+
+[ilang.cn/tpinstall.html](https://ilang.cn/tpinstall.html)
+
+## 安全说明
+
+这个插件本身只是一堆文字规则，不是程序，不会在你电脑上运行任何东西。
+
+但AI在帮你做网站的过程中，可能会建议你执行一些命令（比如上传文件到服务器）。遇到这种情况，AI会先告诉你这个命令要做什么，你确认了再执行。不确定的时候就问AI"这个命令具体会改什么，能撤销吗"。
+
+## 技术信息
+
+<details>
+<summary>展开看技术细节（普通用户不需要看）</summary>
+
+### I-Lang v4.0 兼容等级
+
+本仓库是 I-Lang v4.0 L1 advisory skill pack。提供规则和技能文本，不提供 L2 runtime enforcement 或 L3 external grader。
+
+### 结构
+
+```
+.trae/
+  rules/project-rules.md       ← 核心行为规则
+  skills/                       ← 15个领域技能
+    niche-select/  deepseek/  think/  build/  seo/
+    multilang/  content/  style-polish/  affiliate/
+    adsense/  research/  deploy/  openclaw/  techstack/  teaching/
+CLAUDE.md                       ← Claude Code 入口
+```
 
 ### Claude Code 用户
 
@@ -70,78 +143,25 @@ cd iLang-Trae-Plugin
 claude
 ```
 
-Claude Code 会自动读取 CLAUDE.md 并加载所有技能。
-
-**如果报错 "git: command not found"：**
-在终端里先跑 `sudo apt install git -y`（Ubuntu）或去 git-scm.com 下载安装。
-
-## 卸载 / 恢复默认
-
-删掉 `.trae` 文件夹即可恢复默认行为：
+### 安装到已有项目
 
 ```
-rm -rf .trae
+git clone --depth 1 https://gitee.com/palmmedia/iLang-Trae-Plugin.git .ilang-tmp
+cp -R .ilang-tmp/.trae ./
+rm -rf .ilang-tmp
 ```
 
-## 结构
-
-```
-.trae/
-  rules/
-    project-rules.md          ← 核心行为（结论先行/不废话/四步法/执行边界）
-  skills/
-    niche-select/SKILL.md     ← 赛道选择、标杆站分析、数据验证
-    deepseek/SKILL.md         ← DeepSeek配置、模型选择、省钱
-    think/SKILL.md            ← 四步法思维升级
-    build/SKILL.md            ← 从零建站
-    seo/SKILL.md              ← SEO全链路
-    multilang/SKILL.md        ← 7种语言扩展
-    content/SKILL.md          ← AI内容生成
-    style-polish/SKILL.md     ← 提升自然表达，减少模板腔
-    affiliate/SKILL.md        ← 联盟营销变现
-    adsense/SKILL.md          ← Google AdSense运营
-    research/SKILL.md         ← 信息搜集、竞品分析
-    deploy/SKILL.md           ← 一键部署
-    openclaw/SKILL.md         ← AI员工对接
-    techstack/SKILL.md        ← 技术选型
-    teaching/SKILL.md         ← 教学模式
-CLAUDE.md                     ← Claude Code 入口
-```
-
-## 适合谁
-
-- AI 编程课学员
-- 跨境电商从业者
-- 想用 AI 做网站赚钱的人
-- 不懂编程但想让 AI 帮你写代码的人
-
-## 不适合谁
-
-- 专业程序员（用 AutoCode 更合适：github.com/ilang-ai/autocode）
-- 英文环境用户（用 AutoCode）
-
-## 安全说明
-
-本仓库本身不包含可执行代码，仅包含 AI 行为规则和技能文本。
-但技能可能指导 AI 生成 shell 命令、安装命令、部署命令或配置命令。
-
-执行任何命令前，请确认：
-1. 命令要改什么
-2. 是否涉及服务器、DNS、账号、支付、API Key
-3. 是否可回滚
-4. 是否真的需要现在执行
-
-## 更新日志
+### 更新日志
 
 见 [CHANGELOG.md](CHANGELOG.md)
 
+</details>
+
 ## 相关项目
 
-- [I-Lang 协议中文站](https://ilang.cn)
-- [I-Lang v4.0 规范](https://github.com/ilang-ai/ilang-spec/blob/main/SPEC-v4.0-FINAL.md)
-- [Trae AI 编程工具](https://trae.cn)
-- [DeepSeek-TUI 终端客户端](https://gitee.com/palmmedia/DeepSeek-TUI-Enhanced)
-- [AutoCode 英文技能集](https://github.com/ilang-ai/autocode)
+- [I-Lang 协议](https://ilang.cn)
+- [Trae 下载](https://trae.cn)
+- [DeepSeek 终端客户端](https://gitee.com/palmmedia/DeepSeek-TUI-Enhanced)
 
 ## 协议
 
