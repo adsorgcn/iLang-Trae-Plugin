@@ -4,7 +4,6 @@
 
 审计响应补丁（GPT第三轮审计8条）：
 
-- README新增"监管和平台风险说明"段
 - project-rules新增"优先级"段：高监管领域安全边界优先于"直接给结论"
 - niche-select：赛道风险标签（high/medium/low），高监管赛道给提示不拦截
 - niche-select：去掉"addiction_loop"措辞，改为"high_retention|high_regulatory_risk"
@@ -55,7 +54,7 @@
 - 联盟营销独立技能：从变现里拆出，覆盖选品、Cookie周期、转化率
 - 三步法→四步法：新增验证步骤
 - SEO基础+实战合并为一个完整SEO技能
-- 教学模式+提智去障合并
+- 教学模式+认知提升合并
 - 质量检查/压缩/进度汇报/意图识别并入核心行为
 - ads.txt并入AdSense技能
 - I-Lang v4.0：PRIOR声明、四步法验证

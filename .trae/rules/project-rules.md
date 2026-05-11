@@ -1,5 +1,5 @@
 ---
-name: iLang 提智插件
+name: iLang Trae Plugin
 version: 2.0.3
 protocol: I-Lang v4.0
 conformance: L1-advisory
