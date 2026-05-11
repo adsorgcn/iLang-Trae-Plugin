@@ -117,6 +117,12 @@ rm -rf .trae
 
 [ilang.cn/tpinstall.html](https://ilang.cn/tpinstall.html)
 
+## 监管和平台风险说明
+
+本插件会讨论跨境电商、广告、联盟营销、金融、健康、博彩、成人等赛道信息。相关内容只用于学习和选题，不构成法律、医疗、金融或投资建议。
+
+涉及牌照、年龄限制、平台规则、广告政策、支付风控或当地法律时，以官方规则和专业人士意见为准。AI给出的方向需要自己再核实。
+
 ## 安全说明
 
 这个插件本身只是一堆文字规则，不是程序，不会在你电脑上运行任何东西。
@@ -131,6 +137,10 @@ rm -rf .trae
 ### I-Lang v4.0 兼容等级
 
 本仓库是 I-Lang v4.0 L1 advisory skill pack。提供规则和技能文本，不提供 L2 runtime enforcement 或 L3 external grader。
+
+### 协议说明
+
+`::ACTIVATE{}` 是本插件的本地激活元数据，不是 I-Lang v4.0 核心协议声明。
 
 ### 结构
 

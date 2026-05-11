@@ -1,7 +1,7 @@
 ---
 name: niche-select
 description: Niche discovery and validation. Guided exploration with live data search, benchmark site analysis, revenue verification tools.
-version: 2.0.1
+version: 2.0.3
 ---
 
 ::GENE{niche-map|conf:confirmed|scope:global|priority:critical}
@@ -13,7 +13,7 @@ version: 2.0.1
   T:tier_2_meta=cpc:8_to_50|emotion_driven|repeat_purchase|high_ltv
 
   T:tier_3_gaming=GAMING.sportsbook_licensed|GAMING.casino_licensed|GAMING.sweepstakes_leadgen|GAMING.esports|GAMING.peripheral|ADULT.ofm_management|ADULT.cam_affiliate|ADULT.content_platform
-  T:tier_3_meta=cpc:5_to_30|addiction_loop|ltv_extreme|license_required_for_gambling
+  T:tier_3_meta=cpc:5_to_30|high_retention|high_regulatory_risk|ltv_extreme|license_required_for_gambling
 
   T:tier_4_tech=SAAS.ai_writing|SAAS.ai_image|SAAS.ai_automation|SAAS.ai_code|SAAS.crm|SAAS.project_mgmt|CYBER.vpn|CYBER.antivirus|CYBER.password_mgmt|HOST.web_hosting|HOST.seo_tools|SMART.security_cam|SMART.thermostat|SMART.lighting|SMART.hub
   T:tier_4_meta=commission:20_to_40pct_recurring|saas_sticky|cyber_fear_driven|smarthome_170B
@@ -77,6 +77,20 @@ version: 2.0.1
   A:illegal_activity⇒forbidden|bulletproof_hosting|private_servers_cheats|domain_hijack_301
   T:legal_boundary="不违法"_not_"不违规"|licensed_gambling_ok|adult_affiliate_ok|pain_mgmt_ok|crypto_info_ok
   T:grey_zone_disclosure|when:tier_3_or_tier_7⇒"这个方向合法但有平台限制，Google Ads可能不让投，SEO和内容营销是主要获客方式"
+
+::GENE{niche-risk-label|conf:confirmed|scope:global}
+  T:risk_level_high=FIN.*|INS.*|LEG.*|HEALTH.*|GAMING.*|ADULT.*|MYSTIC.*|VIRTUAL.*
+  T:risk_level_medium=SAAS.*|CYBER.*|EV.*|EDU.*
+  T:risk_level_low=BUILD.*|PET.*|TRAVEL.*|GREEN.*|HOME.*|SMART.*
+  T:when_user_picks_high_risk⇒show_opportunity_then_note:"这个方向合法能做，但有平台限制或需要资质。我帮你搜标杆站的时候会一起看它们怎么处理合规的"
+  A:block_legal_niche⇒forbidden|inform_not_block
+  A:illegal_niche_only=bulletproof_hosting|private_server_cheats|domain_hijack_301
+
+::GENE{niche-no-browser|conf:confirmed|scope:global}
+  A:no_web_access_and_claim_current_data⇒forbidden
+  T:if_no_web_search=explain_limitation+provide_search_queries_for_user+ask_user_to_paste_results
+  T:source_required=tool_name+domain+metric+date_checked
+  T:no_source="这是候选方向，还没验证。你用SimilarWeb查一下才能确认"
 
 ::ACTIVATE{niche-select}
   ON:不知道做什么|选方向|niche|赛道|什么站赚钱|做什么网站|选品|找方向

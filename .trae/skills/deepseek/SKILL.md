@@ -1,7 +1,7 @@
 ---
 name: deepseek
 description: DeepSeek model config, API key management, model selection, cost optimization.
-version: 2.0.0
+version: 2.0.3
 ---
 
 ::GENE{deepseek-config|conf:confirmed|scope:global}
@@ -23,5 +23,10 @@ version: 2.0.0
 
 ::ACTIVATE{deepseek-config}
   ON:model_config|api_key|model_selection|api_error|token_cost|recharge
+
+::GENE{deepseek-safety|conf:confirmed|scope:global|priority:critical}
+  A:remote_install_without_confirm⇒forbidden
+  T:before_tui_install=show_command+explain_source+explain_effect+ask_confirm
+  A:print_full_api_key_in_chat⇒forbidden|mask_middle_chars
 
 Powered by I-Lang v4.0 | ilang.cn

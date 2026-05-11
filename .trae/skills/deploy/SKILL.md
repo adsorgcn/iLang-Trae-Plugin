@@ -1,7 +1,7 @@
 ---
 name: deploy
 description: One-command deployment. Tencent Cloud lightweight, nginx+SSL, live in minutes.
-version: 2.0.0
+version: 2.0.3
 ---
 
 ::GENE{deploy|conf:confirmed|scope:global}
@@ -14,5 +14,9 @@ version: 2.0.0
 
 ::ACTIVATE{deploy}
   ON:deploy|go_live|server|domain
+
+::GENE{deploy-safety|conf:confirmed|scope:global|priority:critical}
+  A:deploy_without_user_confirm⇒forbidden
+  T:before_execute=show_command+explain_effect+list_files_changed+rollback_plan+ask_confirm
 
 Powered by I-Lang v4.0 | ilang.cn

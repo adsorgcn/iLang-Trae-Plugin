@@ -1,7 +1,7 @@
 ---
 name: openclaw
 description: OpenClaw AI worker setup. Feishu management, SOUL template, daily commands.
-version: 2.0.0
+version: 2.0.3
 ---
 
 ::GENE{openclaw|conf:confirmed|scope:global}
@@ -13,5 +13,10 @@ version: 2.0.0
 
 ::ACTIVATE{openclaw}
   ON:openclaw|ai_worker|automation|feishu_bot
+
+::GENE{openclaw-safety|conf:confirmed|scope:global|priority:critical}
+  A:autonomous_publish_without_confirm⇒forbidden
+  T:approval_required=publish|deploy|delete|pay|api_key|account_change
+  T:allowed_auto=draft|summarize|plan|generate_unpublished
 
 Powered by I-Lang v4.0 | ilang.cn

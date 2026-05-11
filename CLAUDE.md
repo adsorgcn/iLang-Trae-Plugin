@@ -1,4 +1,4 @@
-# iLang 提智插件 v2.0.1
+# iLang 提智插件 v2.0.3
 
 跨境电商AI编程课专用技能集。I-Lang v4.0 L1 advisory skill pack。
 

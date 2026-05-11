@@ -1,5 +1,20 @@
 # 更新日志
 
+## v2.0.3 (2026-05-11)
+
+审计响应补丁（GPT第三轮审计8条）：
+
+- README新增"监管和平台风险说明"段
+- project-rules新增"优先级"段：高监管领域安全边界优先于"直接给结论"
+- niche-select：赛道风险标签（high/medium/low），高监管赛道给提示不拦截
+- niche-select：去掉"addiction_loop"措辞，改为"high_retention|high_regulatory_risk"
+- niche-select：无浏览器降级策略，禁止无来源数据冒充验证结果
+- deploy：本地确认钩子，执行前必须展示命令+影响+回滚方案+等确认
+- deepseek：远程安装确认钩子，禁止在对话中打印完整API Key
+- openclaw：自动发布guard，publish/deploy/delete/pay必须人工确认
+- README技术区声明::ACTIVATE是插件本地语法
+- 版本号统一2.0.3
+
 ## v2.0.2 (2026-05-11)
 
 - 新增niche-select技能（第15个）：完整赛道地图（7层级），全部I-Lang spec编码
